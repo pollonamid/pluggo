@@ -51,3 +51,12 @@ func Get(name string) interface{} {
 	}
 	return factory()
 }
+
+// GetNames is used to get a slice conaining the names of all loaded plugins.
+func GetNames() []string {
+	var names []string
+	for key := range plugins {
+		names = append(names, key)
+	}
+	return names
+}
